@@ -182,7 +182,7 @@ namespace 俄罗斯方块
                         //下边界
                         if (i + block_Now.Row > 19) return false;
                         //触底或接触到已触底的方块
-                        if (map[i + block_Now.Row, j + block_Now.Col] == 1) return false;
+                        if (map[i + block_Now.Row, j + block_Now.Col] == 1) return false;//在左边界时进行旋转变形，变形后的形状Col可能为负值会超出索引，需要加一个碰撞检测
                     }
                 }
             }
